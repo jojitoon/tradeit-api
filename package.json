@@ -1,0 +1,57 @@
+{
+  "name": "tradeit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jojitoon",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "babel-node ./index.js",
+    "build": "rm -rf dist && babel . --out-dir ./dist",
+    "dev": "nodemon index.js --exec babel-node"
+  },
+  "dependencies": {
+    "@babel/node": "^7.12.6",
+    "africastalking": "^0.5.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase": "^8.0.2",
+    "firebase-admin": "^9.4.1",
+    "mongo-oplog": "^2.1.4",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "node-geocoder": "^3.27.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "rules": {
+      "comma-dangle": [],
+      "no-unused-vars": [
+        "warn"
+      ],
+      "no-var": [
+        "off"
+      ],
+      "one-var": [
+        "off"
+      ]
+    }
+  }
+}
