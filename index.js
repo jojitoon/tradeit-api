@@ -23,20 +23,11 @@ mongoose
 
 app.use('/api/', router);
 
-// if (process.env.NODE_ENV === 'production') {
-app.use(express.static('../client/build'));
-
-const path = require('path');
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
+app.get('/*', (req, res) => {
+  res.status(400).json({
+    message: 'Invalid URL',
+  });
 });
-// }
-
-// app.get('/*', (req, res) => {
-//   res.status(400).json({
-//     message: 'Invalid URL',
-//   });
-// });
 
 app.listen(process.env.PORT || 5000, () => {
   console.log('connected to the server', process.env.PORT || 5000);
